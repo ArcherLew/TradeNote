@@ -81,8 +81,8 @@ def read_daily_data(filePath):
     return df
 
 tradeData = CSVReader.read_trade_log(300083)
-print(tradeData)
-print("--------------------")
+# print(tradeData)
+# print("--------------------")
 
 # 获取数据
 dailyPath = r'C:\\Program Files\\HuaTai\\vipdoc\\sz\\lday\\sz300083.day'
@@ -170,6 +170,17 @@ ax1.add_collection(LineCollection(rangeSegments, colors=updown_colors, linewidth
 ax1.add_collection(PolyCollection(barVerts, facecolors=inner_colors, edgecolors=updown_colors, antialiaseds=False, linewidths=0.5))
 
 # lx:绘制买卖点
+def on_pick(event):
+    artist = event.artist
+    xmouse, ymouse = event.mouseevent.xdata, event.mouseevent.ydata
+    # x, y = artist.get_xdata(), artist.get_ydata()
+    ind = event.ind
+    print('Artist picked:', event.artist)
+    print('{} vertices picked'.format(len(ind)))
+    print('Pick between vertices {} and {}'.format(min(ind), max(ind) + 1))
+    print('x, y of mouse: {:.2f},{:.2f}'.format(xmouse, ymouse))
+    # print('Data point:', x[ind[0]], y[ind[0]])
+
 for index, row in df.iterrows():
     # if tradeData.loc[[row.dt]]:
     # print(row['dt'])
@@ -178,18 +189,19 @@ for index, row in df.iterrows():
     # 不加这个判断， logs = tradeData.loc[[dt],['amount', 'price']] 会报错如下：
     # #KeyError: "None of [Float64Index([20201012.0], dtype='float64', name='date')] are in the [index]"
     if dt in tradeData.index.values:
-        print("---", dt, "---")
+        # print("---", dt, "---")
         date = row['date']
         logs = tradeData.loc[[dt],['amount', 'price']]
         # print(logs)
         for _, log in logs.iterrows():
-            print(log)
+            # print(log)
             _color = 'r' if log.amount > 0 else '#00ff00'
             _marker = '>' if log.amount > 0 else '<'
             x = date-0.25 if log.amount > 0 else date+0.25
             y = log.price * 100
-            ax1.scatter(x, y, marker=_marker, color=_color)
+            ax1.scatter(x, y, marker=_marker, color=_color,  picker=5)
 
+fig.canvas.callbacks.connect('pick_event', on_pick)
 
 # 绘制均线
 mav_colors = ['#ffffff', '#d4ff07', '#ff80ff', '#00e600', '#02e2f4', '#ffffb9', '#2a6848']  # 均线循环颜色
