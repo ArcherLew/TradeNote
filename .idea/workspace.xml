@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="21ba2be5-9d76-4338-86d2-6b7d3ba69e86" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1lrdr5Vb1hhOBu6CjZXmQZAAoxD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\_Trading\Code\TradeNote" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\_Trading\Code\TradeNote" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.kline01 (1)">
+    <configuration name="CSVReader" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TradeNote" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CSVReader.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="kline01 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TradeNote" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/kline01.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="kline01" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="TradeNote" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.kline01 (1)" />
+        <item itemvalue="Python.kline01" />
+        <item itemvalue="Python.CSVReader" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="21ba2be5-9d76-4338-86d2-6b7d3ba69e86" name="Default Changelist" comment="" />
+      <created>1608359339621</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608359339621</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1100" y="148" key="#CSVReader" timestamp="1608454768622">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1100" y="148" key="#CSVReader/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608454768622" />
+    <state x="1082" y="148" key="#kline01" timestamp="1608375076678">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1082" y="148" key="#kline01/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608375076678" />
+    <state x="1082" y="148" key="#main" timestamp="1608375026207">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1082" y="148" key="#main/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608375026207" />
+    <state width="1031" height="336" key="GridCell.Tab.0.bottom" timestamp="1608459497560">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1031" height="336" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608459497560" />
+    <state width="1031" height="336" key="GridCell.Tab.0.center" timestamp="1608459497560">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1031" height="336" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608459497560" />
+    <state width="1031" height="336" key="GridCell.Tab.0.left" timestamp="1608459497560">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1031" height="336" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608459497560" />
+    <state width="1031" height="336" key="GridCell.Tab.0.right" timestamp="1608459497560">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1031" height="336" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608459497560" />
+    <state width="1031" height="347" key="GridCell.Tab.1.bottom" timestamp="1608459497555">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1031" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608459497555" />
+    <state width="1031" height="347" key="GridCell.Tab.1.center" timestamp="1608459497555">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1031" height="347" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608459497555" />
+    <state width="1031" height="347" key="GridCell.Tab.1.left" timestamp="1608459497555">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1031" height="347" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608459497555" />
+    <state width="1031" height="347" key="GridCell.Tab.1.right" timestamp="1608459497555">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1031" height="347" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608459497555" />
+    <state x="870" y="204" key="SettingsEditor" timestamp="1608360212920">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="870" y="204" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608360212920" />
+    <state x="1033" y="253" width="700" height="530" key="recent.locations.popup" timestamp="1608454756970">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1033" y="253" width="700" height="530" key="recent.locations.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608454756970" />
+    <state x="1037" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1608366369403">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1037" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1608366369403" />
+  </component>
+</project>
