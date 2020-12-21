@@ -169,17 +169,25 @@ ax1.add_collection(LineCollection(rangeSegments, colors=updown_colors, linewidth
 # 生成多边形(矩形)顶点数据(背景填充色，边框色，反锯齿，线宽)
 ax1.add_collection(PolyCollection(barVerts, facecolors=inner_colors, edgecolors=updown_colors, antialiaseds=False, linewidths=0.5))
 
+
 # lx:绘制买卖点
 def on_pick(event):
     artist = event.artist
-    xmouse, ymouse = event.mouseevent.xdata, event.mouseevent.ydata
+    print(scaObj)
+    # print(scaObj.get_cursor_data())
+    print(scaObj.get_label())
+
+
+    # xmouse, ymouse = event.mouseevent.xdata, event.mouseevent.ydata
     # x, y = artist.get_xdata(), artist.get_ydata()
-    ind = event.ind
-    print('Artist picked:', event.artist)
-    print('{} vertices picked'.format(len(ind)))
-    print('Pick between vertices {} and {}'.format(min(ind), max(ind) + 1))
-    print('x, y of mouse: {:.2f},{:.2f}'.format(xmouse, ymouse))
+    # ind = event.ind
+    # print('Artist picked:', event.artist)
+    # print('{} vertices picked'.format(len(ind)))
+    # print('Pick between vertices {} and {}'.format(min(ind), max(ind) + 1))
+    # print('x, y of mouse: {:.2f},{:.2f}'.format(xmouse, ymouse))
     # print('Data point:', x[ind[0]], y[ind[0]])
+
+
 
 for index, row in df.iterrows():
     # if tradeData.loc[[row.dt]]:
@@ -199,9 +207,15 @@ for index, row in df.iterrows():
             _marker = '>' if log.amount > 0 else '<'
             x = date-0.25 if log.amount > 0 else date+0.25
             y = log.price * 100
-            ax1.scatter(x, y, marker=_marker, color=_color,  picker=5)
+            scaObj = ax1.scatter(x, y, marker=_marker, color=_color,  picker=5)
+            scaObj.set_picker('pick_event')
+            scaObj.set_label(str(log.price))
 
-fig.canvas.callbacks.connect('pick_event', on_pick)
+# for s in scatterList:
+#     print(s)
+
+# fig.canvas.callbacks.connect('pick_event', on_pick)
+fig.canvas.mpl_connect('pick_event', on_pick)
 
 # 绘制均线
 mav_colors = ['#ffffff', '#d4ff07', '#ff80ff', '#00e600', '#02e2f4', '#ffffb9', '#2a6848']  # 均线循环颜色
