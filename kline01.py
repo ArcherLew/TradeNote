@@ -80,18 +80,25 @@ def read_daily_data(filePath):
     # ''',inplace=True)
     return df
 
-tradeData = CSVReader.read_trade_log(300083)
+# tradeData = CSVReader.read_trade_log(300083)
 # print(tradeData)
 # print("--------------------")
 
+code = 601899
+
+reader = CSVReader()
+allData = reader.load_trade_log("gx")
+tradeData = reader.get_trade_data(allData, code)
+
 # 获取数据
-dailyPath = r'C:\\Program Files\\HuaTai\\vipdoc\\sz\\lday\\sz300083.day'
+jys = 'sh' if code > 600000 else 'sz'
+dailyPath =  r'C:\\Program Files\\HuaTai\\vipdoc\\'+jys+'\\lday\\'+jys+str(code)+'.day'
 df = read_daily_data(dailyPath)
 # df = ts.get_k_data('603986', '2019-01-01')  # 获取日K线数据
 # df.drop('code', axis=1, inplace=True)  # 剔除多余的列
 if draw_macd: calc_macd(df)  # 计算MACD值，数据存于DataFrame中
 if draw_kdj: calc_kdj(df)  # 计算KDJ值，数据存于DataFrame中
-df = df[-50:]  # 取最近的N天测试，列顺序为 date,open,close,high,low,volume,dif,dea,bar,k,d,j
+df = df[-100:]  # 取最近的N天测试，列顺序为 date,open,close,high,low,volume,dif,dea,bar,k,d,j
 # print(df)
 # print("--------------------")
 
@@ -199,13 +206,13 @@ for index, row in df.iterrows():
     if dt in tradeData.index.values:
         # print("---", dt, "---")
         date = row['date']
-        logs = tradeData.loc[[dt],['amount', 'price']]
+        logs = tradeData.loc[[dt],['amount', 'price', 'bs']]
         # print(logs)
         for _, log in logs.iterrows():
             # print(log)
-            _color = 'r' if log.amount > 0 else '#00ff00'
-            _marker = '>' if log.amount > 0 else '<'
-            x = date-0.25 if log.amount > 0 else date+0.25
+            _color = 'r' if log.bs > 0 else '#00ff00'
+            _marker = '>' if log.bs > 0 else '<'
+            x = date-0.25 if log.bs > 0 else date+0.25
             y = log.price * 100
             scaObj = ax1.scatter(x, y, marker=_marker, color=_color,  picker=5)
             scaObj.set_picker('pick_event')
