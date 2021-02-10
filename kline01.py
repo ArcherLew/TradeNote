@@ -84,21 +84,22 @@ def read_daily_data(filePath):
 # print(tradeData)
 # print("--------------------")
 
-code = 601899
+file = 'HT-2021-Q1'
+code = '601899'
 
 reader = CSVReader()
-allData = reader.load_trade_log("gx")
+allData = reader.load_trade_log('ht', file)
 tradeData = reader.get_trade_data(allData, code)
 
 # 获取数据
-jys = 'sh' if code > 600000 else 'sz'
+jys = 'sh' if int(code) > 600000 else 'sz'
 dailyPath =  r'C:\\Program Files\\HuaTai\\vipdoc\\'+jys+'\\lday\\'+jys+str(code)+'.day'
 df = read_daily_data(dailyPath)
 # df = ts.get_k_data('603986', '2019-01-01')  # 获取日K线数据
 # df.drop('code', axis=1, inplace=True)  # 剔除多余的列
 if draw_macd: calc_macd(df)  # 计算MACD值，数据存于DataFrame中
 if draw_kdj: calc_kdj(df)  # 计算KDJ值，数据存于DataFrame中
-df = df[-100:]  # 取最近的N天测试，列顺序为 date,open,close,high,low,volume,dif,dea,bar,k,d,j
+df = df[-30:]  # 取最近的N天测试，列顺序为 date,open,close,high,low,volume,dif,dea,bar,k,d,j
 # print(df)
 # print("--------------------")
 
@@ -122,10 +123,10 @@ plt.rc('grid', c='#800000', alpha=0.9, ls=':', lw=0.8)  # 网格属性(颜色，
 plt.rc('lines', lw=0.8)  # 全局线宽
 
 # 创建绘图对象和4个坐标轴
-fig = plt.figure(figsize=(16, 8))
+fig = plt.figure(figsize=(9, 6))
 left, width = 0.05, 0.9
-ax1 = fig.add_axes([left, 0.6, width, 0.35])  # left, bottom, width, height
-ax2 = fig.add_axes([left, 0.45, width, 0.15], sharex=ax1)  # 共享ax1轴
+ax1 = fig.add_axes([left, 0.25, width, 0.7])  # left, bottom, width, height #lx:旧参数0.6/0.35
+ax2 = fig.add_axes([left, 0.05, width, 0.2], sharex=ax1)  # 共享ax1轴 #lx:旧参数0.45/0.15
 if draw_macd: ax3 = fig.add_axes([left, 0.25, width, 0.2], sharex=ax1)  # 共享ax1轴
 if draw_kdj: ax4 = fig.add_axes([left, 0.05, width, 0.2], sharex=ax1)  # 共享ax1轴
 plt.setp(ax1.get_xticklabels(), visible=False)  # 使x轴刻度文本不可见，因为共享，不需要显示
@@ -232,7 +233,7 @@ for i in range(len(mav_period)):
     if n >= mav_period[i]:
         mav_vals = df['close'].rolling(mav_period[i]).mean().values
         ax1.plot(xdates, mav_vals, c=mav_colors[i % len(mav_colors)]) # , label='MA' + str(mav_period[i]) #均线说明框，加在 plot 参数列表末尾
-ax1.set_title('K线图')  # 标题
+ax1.set_title(code+' 日线')  # 标题
 ax1.grid(True)  # 画网格
 # ax1.legend(loc='upper right')  # 图例放置于右上角
 ax1.xaxis_date()  # 好像要不要效果一样？
@@ -244,10 +245,11 @@ barVerts = [((date - delta, 0), (date - delta, vol), (date + delta, vol), (date 
 ax2.add_collection(PolyCollection(barVerts, facecolors=inner_colors, edgecolors=updown_colors, antialiaseds=False, linewidths=0.5))  # 生成多边形(矩形)顶点数据(背景填充色，边框色，反锯齿，线宽)
 if n >= 5:  # 5日均线，作法类似前面的均线
     vol5 = df['volume'].rolling(5).mean().values
-    ax2.plot(xdates, vol5, c='y', label='VOL5')
+    ax2.plot(xdates, vol5, c='y') # , label='VOL5'
 if n >= 10:  # 10日均线，作法类似前面的均线
     vol10 = df['volume'].rolling(10).mean().values
-    ax2.plot(xdates, vol10, c='w', label='VOL10')
+    ax2.plot(xdates, vol10, c='w') # , label='VOL10'
+
 ax2.yaxis.set_ticks_position('right')  # y轴显示在右边
 ax2.legend(loc='upper right')  # 图例放置于右上角
 ax2.grid(True)  # 画网格
